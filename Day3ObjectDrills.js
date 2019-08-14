@@ -120,3 +120,8 @@ const arr = [obj1, obj2, obj3];
 arr.map(a => {
   console.log(a.name, a.jobTitle);
 });
+
+// yes this works the same way
+arr.forEach(a => {
+  console.log(a.name, a.jobTitle);
+});
