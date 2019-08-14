@@ -118,12 +118,12 @@ const obj3 = {
 const arr = [obj1, obj2, obj3];
 
 arr.map(a => {
-  console.log(a.name, a.jobTitle);
+  //console.log(a.name, a.jobTitle);
 });
 
 // yes this works the same way
 arr.forEach(a => {
-  console.log(a.name, a.jobTitle);
+  //console.log(a.name, a.jobTitle);
 });
 
 
@@ -133,17 +133,43 @@ obj1.boss = 'boss';
 
 arr.map(a => {
   if (!a.hasOwnProperty('boss')) {
-    console.log(`${a.jobTitle} ${a.name} doesn't report to anybody.`)
+    //console.log(`${a.jobTitle} ${a.name} doesn't report to anybody.`)
   } else {
-    console.log(`${a.jobTitle} ${a.name} reports to ${a.boss}.`);
+    //console.log(`${a.jobTitle} ${a.name} reports to ${a.boss}.`);
   }
 });
 
 // this also works
 arr.map(a => {
   if (!('boss' in a)) {
-    console.log(`${a.jobTitle} ${a.name} doesn't report to anybody.`)
+    //console.log(`${a.jobTitle} ${a.name} doesn't report to anybody.`)
   } else {
-    console.log(`${a.jobTitle} ${a.name} reports to ${a.boss}.`);
+    //console.log(`${a.jobTitle} ${a.name} reports to ${a.boss}.`);
   }
 });
+
+function decode(word) {
+  const cipher = {
+    a: 2,
+    b: 3,
+    c: 4,
+    d: 5
+  };
+
+  return (word[0] in cipher) ? word[cipher[word[0]] - 1] : ' ';
+
+  // step 0: does key exist in cipher? (word[0] in cipher)
+  // step 1: get key in cipher: key === word[0]
+  // step 2: get value in cipher at the key: cipher[word[0]] (cipher[key] === the value)
+  // step 3: minus 1: cipher[word[0]] - 1
+  // step 4: get the nth letter in word (n is what we got in step 3): word[cipher[word[0]] - 1]
+}
+
+function decodeWords(words) {
+  return words
+    .split(' ')
+    .map(word => decode(word))
+    .join('');
+}
+
+decodeWords('craft block argon meter bells brown croon droop');
