@@ -70,3 +70,14 @@ function validateKeys(object, expectedKeys) {
     }
   }
 }
+
+const loaf = {
+  flour: 300,
+  water: 210,
+  hydration() {
+    return this.water / this.flour * 100;
+  }
+}
+
+console.log(`flour: ${loaf.flour} water: ${loaf.water}`);
+console.log(loaf.hydration());
