@@ -40,3 +40,7 @@ function keyDeleter(obj) {
 
   return obj;
 }
+
+function makeStudentsReport(data) {
+  return data.map(d => `${d.name}: ${d.grade}`);
+}
