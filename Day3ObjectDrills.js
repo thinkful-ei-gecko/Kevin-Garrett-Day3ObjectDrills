@@ -93,3 +93,9 @@ const obj = {
 for (const key in obj) {
   console.log(obj, obj[key]);
 }
+
+const humans = {
+  meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'],
+}
+
+console.log(humans.meals[4]);
