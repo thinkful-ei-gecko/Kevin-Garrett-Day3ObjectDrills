@@ -77,7 +77,19 @@ const loaf = {
   hydration() {
     return this.water / this.flour * 100;
   }
-}
+};
 
-console.log(`flour: ${loaf.flour} water: ${loaf.water}`);
-console.log(loaf.hydration());
+//console.log(`flour: ${loaf.flour} water: ${loaf.water}`);
+//console.log(loaf.hydration());
+
+const obj = {
+  foo: 'foo',
+  bar: 'bar',
+  fum: 'fum',
+  quux: 'quux',
+  spam: 'spam'
+};
+
+for (const key in obj) {
+  console.log(obj, obj[key]);
+}
