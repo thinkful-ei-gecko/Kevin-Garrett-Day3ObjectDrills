@@ -31,5 +31,5 @@ function personMaker() {
       return `${this.firstName} ${this.lastName}`;
     }
   };
-  return person;
+  return person:
 }
