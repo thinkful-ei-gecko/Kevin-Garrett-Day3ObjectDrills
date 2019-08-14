@@ -125,3 +125,25 @@ arr.map(a => {
 arr.forEach(a => {
   console.log(a.name, a.jobTitle);
 });
+
+
+
+obj3.boss = 'boss';
+obj1.boss = 'boss';
+
+arr.map(a => {
+  if (!a.hasOwnProperty('boss')) {
+    console.log(`${a.jobTitle} ${a.name} doesn't report to anybody.`)
+  } else {
+    console.log(`${a.jobTitle} ${a.name} reports to ${a.boss}.`);
+  }
+});
+
+// this also works
+arr.map(a => {
+  if (!('boss' in a)) {
+    console.log(`${a.jobTitle} ${a.name} doesn't report to anybody.`)
+  } else {
+    console.log(`${a.jobTitle} ${a.name} reports to ${a.boss}.`);
+  }
+});
