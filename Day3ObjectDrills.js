@@ -91,11 +91,32 @@ const obj = {
 };
 
 for (const key in obj) {
-  console.log(obj, obj[key]);
+  //console.log(obj, obj[key]);
 }
 
 const humans = {
   meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'],
-}
+};
 
-console.log(humans.meals[4]);
+//console.log(humans.meals[4]);
+
+const obj1 = {
+  name: 'Garrett',
+  jobTitle: 'Student/Husband'
+};
+
+const obj2 = {
+  name: 'Kevin',
+  jobTitle: 'Student/Dad'
+};
+
+const obj3 = {
+  name: 'Frodo',
+  jobTitle: 'Hobbit'
+};
+
+const arr = [obj1, obj2, obj3];
+
+arr.map(a => {
+  console.log(a.name, a.jobTitle);
+});
