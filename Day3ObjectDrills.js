@@ -31,7 +31,7 @@ function personMaker() {
       return `${this.firstName} ${this.lastName}`;
     }
   };
-  return person:
+  return person;
 }
 
 function keyDeleter(obj) {
@@ -51,10 +51,14 @@ function enrollInSummerSchool(students) {
       name: student.name,
       status: 'In Summer school',
       course: student.course,
-    }
+    };
   });
 }
 
 function findById(items, idNum) {
   return items.find(item => item.id === idNum);
+}
+
+function validateKeys(object, expectedKeys) {
+  
 }
