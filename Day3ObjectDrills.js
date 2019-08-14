@@ -173,3 +173,39 @@ function decodeWords(words) {
 }
 
 decodeWords('craft block argon meter bells brown croon droop');
+
+function createCharacter(name, nickname, race, origin, attack, defense) {
+  return {
+    name,
+    nickname,
+    race,
+    origin,
+    attack,
+    defense,
+
+    describe() {
+      console.log(`${name} is a ${race} from ${origin}.`);
+    },
+
+    evaluateFight(character) {
+      return `Your opponent takes ${Math.max(0, this.attack - character.defense)} and you receive ${Math.max(0, character.attack - this.defense)} damage`;
+    }
+  }
+}
+
+const characters = [
+  createCharacter('Gandalf the white', 'gandalf', 'Wizard', 'Middle Earth', 10, 6 ),
+  createCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 2, 1),
+  createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2),
+  createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunedain', 6, 8),
+  createCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5)
+];
+
+characters.push(createCharacter('Arwen Undomiel', 'arwen', 'Half-elf', 'Rivendell', 5, 5));
+
+characters.find(c => c.nickname === 'aragorn').describe();
+
+const Hobbits = characters.filter(c => c.race === 'Hobbit');
+
+const highAttackers = characters.filter(c => c.attack > 5);
+
